@@ -60,14 +60,14 @@
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             text-decoration: none;
         }
 
         .logo-img-small {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             object-fit: cover;
             border: 2px solid var(--border);
         }
@@ -78,20 +78,11 @@
         }
 
         .brand-name-small {
-            font-size: 1.25rem;
+            font-size: 1.6rem;
             font-weight: 900;
             color: var(--primary);
             line-height: 1.1;
             letter-spacing: -0.5px;
-        }
-
-        .school-name-small {
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 2px;
         }
 
         .nav-cta {
@@ -341,13 +332,26 @@
             margin-top: auto;
             background: var(--bg-body);
             border-radius: var(--radius-lg);
-            padding: 1rem;
+            padding: 1.2rem;
             border: 1px solid var(--border);
+        }
+
+        .exam-type {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .mark-stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
             text-align: center;
             border-bottom: 1px solid var(--border);
             padding-bottom: 12px;
@@ -416,7 +420,6 @@
             overflow: hidden;
         }
 
-        /* Abstract shapes in background of CTA */
         .cta-section::before {
             content: '';
             position: absolute;
@@ -473,7 +476,7 @@
 
         /* --- FOOTER --- */
         footer {
-            background: #020617; /* Slate 950 */
+            background: #020617;
             color: var(--text-light);
             text-align: center;
             padding: 2rem 1.5rem;
@@ -489,13 +492,15 @@
 
         /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 640px) {
-            .nav-brand { gap: 10px; }
-            .logo-img-small { width: 40px; height: 40px; border-radius: 10px; }
-            .brand-name-small { font-size: 1.1rem; }
-            .school-name-small { font-size: 0.55rem; }
+            .nav-brand { gap: 12px; }
+            .logo-img-small { width: 55px; height: 55px; border-radius: 12px; }
+            .brand-name-small { font-size: 1.3rem; }
             
             .info-grid { flex-direction: column; align-items: stretch; }
             .info-card { max-width: 100%; }
+
+            .mark-stats { gap: 5px; }
+            .stat-val { font-size: 1.3rem; }
         }
 
     </style>
@@ -507,7 +512,6 @@
             <img src="https://i.postimg.cc/HWSDVGyx/IMG-20260427-000339.jpg" class="logo-img-small" alt="Marks Saathi Logo">
             <div class="brand-text">
                 <div class="brand-name-small">MARKS SAATHI</div>
-                <div class="school-name-small">By Habras International School</div>
             </div>
         </a>
         <a href="https://play.google.com/store/apps/details?id=co.ted.ykvjf" class="nav-cta" target="_blank">
@@ -580,16 +584,17 @@
                         <div class="subject-block">
                             <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English</div>
                             <ul class="chapter-list">
-                                <li>How Teachers Learn & Life</li>
+                                <li>How Teachers Learn</li>
+                                <li>Life</li>
                                 <li>Global Warming</li>
                                 <li>Grammar (Tenses, Modals, Articles, Prepositions, Error Detection)</li>
                             </ul>
                         </div>
                         
                         <div class="card-footer">
+                            <div class="exam-type"><i class="fas fa-list-ul"></i> Exam Type: MCQ</div>
                             <div class="mark-stats">
                                 <div><div class="stat-val">60</div><div class="stat-lbl">Questions</div></div>
+                                <div><div class="stat-val">60</div><div class="stat-lbl">Mins</div></div>
                                 <div><div class="stat-val">60</div><div class="stat-lbl">Max Marks</div></div>
-                            </div>
-                            <div class="scheme-row positive"><i class="fas fa-check-circle"></i> +1 Mark for Correct Answer</div>
-                            <div class="scheme-row neutral"><i class="fas fa-minus-circle"></i> 0 Mark 
+   
