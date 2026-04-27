@@ -78,7 +78,7 @@
         }
 
         .brand-name-small {
-            font-size: 2.2rem; /* Significantly Increased */
+            font-size: 2.2rem; 
             font-weight: 900;
             color: var(--primary);
             line-height: 1.1;
@@ -182,6 +182,15 @@
         .price-crossed { color: var(--text-light); text-decoration: line-through; font-weight: 600; font-size: 1.2rem;}
         .price-free { color: var(--success); font-size: 2.5rem; font-weight: 900; line-height: 1; }
 
+        .info-label {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
         .date-text { font-size: 1.4rem; font-weight: 800; color: var(--dark); }
         .time-text { color: var(--primary); font-weight: 700; margin-top: 4px; font-size: 1.1rem; }
 
@@ -189,15 +198,6 @@
             border: 2px solid var(--primary);
             background: #f5f3ff;
             max-width: 400px;
-        }
-        
-        .timer-label {
-            font-size: 0.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
         }
 
         .timer-row {
@@ -244,11 +244,14 @@
             gap: 2rem;
         }
 
+        /* Class Card Background Palettes */
+        .card-8 { background-color: #ecfdf5; border: 1px solid #a7f3d0; } /* Soft Emerald */
+        .card-9 { background-color: #eff6ff; border: 1px solid #bfdbfe; } /* Soft Blue */
+        .card-10 { background-color: #fdf4ff; border: 1px solid #e9d5ff; } /* Soft Purple */
+
         .exam-card {
-            background: var(--bg-surface);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -294,7 +297,17 @@
             align-items: center;
             gap: 8px;
             padding-bottom: 5px;
-            border-bottom: 2px solid var(--bg-body);
+            border-bottom: 2px solid rgba(0,0,0,0.05);
+        }
+        
+        .mcq-count {
+            margin-left: auto;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-light);
+            background: rgba(255,255,255,0.7);
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         .subject-math { color: #db2777; }
@@ -310,8 +323,8 @@
             position: relative;
             padding-left: 24px;
             font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-main);
+            font-weight: 600; /* Slightly bolder for readability on color backgrounds */
+            color: var(--dark);
             margin-bottom: 8px;
             line-height: 1.4;
         }
@@ -320,20 +333,21 @@
             content: '\f0da'; /* Solid right arrow */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
-            color: var(--text-light);
+            color: var(--primary);
             position: absolute;
             left: 0;
             top: 2px;
             font-size: 0.9rem;
+            opacity: 0.6;
         }
 
         /* Card Footer - Marks */
         .card-footer {
             margin-top: auto;
-            background: var(--bg-body);
+            background: rgba(255, 255, 255, 0.6);
             border-radius: var(--radius-lg);
             padding: 1.2rem;
-            border: 1px solid var(--border);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .exam-type {
@@ -343,7 +357,7 @@
             text-align: center;
             margin-bottom: 12px;
             padding-bottom: 8px;
-            border-bottom: 1px dashed var(--border);
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -353,13 +367,13 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             text-align: center;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             padding-bottom: 12px;
             margin-bottom: 12px;
         }
 
         .stat-val { font-size: 1.5rem; font-weight: 900; color: var(--dark); line-height: 1; }
-        .stat-lbl { font-size: 0.75rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; margin-top: 4px; }
+        .stat-lbl { font-size: 0.75rem; font-weight: 700; color: var(--text-main); text-transform: uppercase; margin-top: 4px; }
 
         .scheme-row {
             display: flex;
@@ -369,7 +383,7 @@
             margin-top: 8px;
         }
         .scheme-row.positive { color: var(--success); }
-        .scheme-row.neutral { color: var(--text-light); }
+        .scheme-row.neutral { color: var(--text-main); }
         .scheme-row i { width: 20px; text-align: center; margin-right: 6px; }
 
         /* --- HOW TO PARTICIPATE --- */
@@ -494,7 +508,7 @@
         @media (max-width: 640px) {
             .nav-brand { gap: 12px; }
             .logo-img-small { width: 55px; height: 55px; border-radius: 12px; }
-            .brand-name-small { font-size: 1.8rem; } /* Increased for mobile too */
+            .brand-name-small { font-size: 1.8rem; } 
             
             .info-grid { flex-direction: column; align-items: stretch; }
             .info-card { max-width: 100%; }
@@ -528,18 +542,19 @@
             <div class="info-grid">
                 <div class="info-card">
                     <div class="price-tag">
-                        <span class="price-crossed">₹999</span>
+                        <span class="price-crossed">Worth ₹999</span>
                         <span class="price-free">FREE</span>
                     </div>
                 </div>
 
                 <div class="info-card">
+                    <div class="info-label"><i class="far fa-calendar-alt"></i> Exam Date & Timing</div>
                     <div class="date-text">Sun, 3 May 2026</div>
                     <div class="time-text">07:45 PM – 08:45 PM</div>
                 </div>
 
                 <div class="info-card timer-card">
-                    <div class="timer-label" id="timer-heading"><i class="fas fa-hourglass-half"></i> Test Starts In</div>
+                    <div class="info-label" id="timer-heading"><i class="fas fa-hourglass-half"></i> Test Starts In</div>
                     <div class="timer-row" id="timer-display">
                         <div class="time-unit"><div class="time-val" id="d">00</div><div class="time-lbl">Days</div></div>
                         <div class="time-unit"><div class="time-val" id="h">00</div><div class="time-lbl">Hrs</div></div>
@@ -559,14 +574,14 @@
             
             <div class="cards-grid">
                 
-                <article class="exam-card">
+                <article class="exam-card card-8">
                     <div class="card-header">
                         <div class="class-badge">Class 8</div>
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="card-body">
                         <div class="subject-block">
-                            <div class="subject-title subject-math"><i class="fas fa-calculator"></i> Mathematics</div>
+                            <div class="subject-title subject-math"><i class="fas fa-calculator"></i> Mathematics <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Rational Numbers</li>
                                 <li>Linear Equations in One Variable</li>
@@ -574,7 +589,7 @@
                             </ul>
                         </div>
                         <div class="subject-block">
-                            <div class="subject-title subject-science"><i class="fas fa-flask"></i> Science</div>
+                            <div class="subject-title subject-science"><i class="fas fa-flask"></i> Science <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Coal and Petroleum</li>
                                 <li>Combustion and Flame</li>
@@ -582,7 +597,7 @@
                             </ul>
                         </div>
                         <div class="subject-block">
-                            <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English</div>
+                            <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>How Teachers Learn</li>
                                 <li>Life</li>
@@ -604,14 +619,14 @@
                     </div>
                 </article>
 
-                <article class="exam-card">
+                <article class="exam-card card-9">
                     <div class="card-header">
                         <div class="class-badge">Class 9</div>
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="card-body">
                         <div class="subject-block">
-                            <div class="subject-title subject-math"><i class="fas fa-calculator"></i> Mathematics</div>
+                            <div class="subject-title subject-math"><i class="fas fa-calculator"></i> Mathematics <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Number System</li>
                                 <li>Polynomials</li>
@@ -619,7 +634,7 @@
                             </ul>
                         </div>
                         <div class="subject-block">
-                            <div class="subject-title subject-science"><i class="fas fa-flask"></i> Science</div>
+                            <div class="subject-title subject-science"><i class="fas fa-flask"></i> Science <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Force and Laws of Motion</li>
                                 <li>Is Matter Around Us Pure</li>
@@ -627,7 +642,7 @@
                             </ul>
                         </div>
                         <div class="subject-block">
-                            <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English</div>
+                            <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Packing</li>
                                 <li>Gulliver in Lilliput (Part 1 & 2)</li>
@@ -649,14 +664,14 @@
                     </div>
                 </article>
 
-                <article class="exam-card">
+                <article class="exam-card card-10">
                     <div class="card-header">
                         <div class="class-badge">Class 10</div>
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="card-body">
                         <div class="subject-block">
-                            <div class="subject-title subject-math"><i class="fas fa-calculator"></i> Mathematics</div>
+                            <div class="subject-title subject-math"><i class="fas fa-calculator"></i> Mathematics <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Real Numbers</li>
                                 <li>Polynomials</li>
@@ -664,7 +679,7 @@
                             </ul>
                         </div>
                         <div class="subject-block">
-                            <div class="subject-title subject-science"><i class="fas fa-flask"></i> Science</div>
+                            <div class="subject-title subject-science"><i class="fas fa-flask"></i> Science <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Chemical Reactions and Equations</li>
                                 <li>Light – Reflection and Refraction</li>
@@ -672,7 +687,7 @@
                             </ul>
                         </div>
                         <div class="subject-block">
-                            <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English</div>
+                            <div class="subject-title subject-english"><i class="fas fa-book-open"></i> English <span class="mcq-count">(20 MCQ)</span></div>
                             <ul class="chapter-list">
                                 <li>Footprints Without Feet</li>
                                 <li>From the Diary of a Young Girl</li>
